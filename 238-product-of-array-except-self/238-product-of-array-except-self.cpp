@@ -1,5 +1,9 @@
 class Solution {
 public:
+    
+    // without using division operation we can simply use prefix and suffix for this 
+    // usefull h vimrooo
+    
     vector<int> productExceptSelf(vector<int>& nums) {
       vector<int>res(nums.size());
         int pre=1,suff=1;
