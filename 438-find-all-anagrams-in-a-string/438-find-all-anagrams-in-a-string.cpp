@@ -3,38 +3,51 @@ public:
     
     
     vector<int> findAnagrams(string s, string p) {
-        vector<int> ans;
-        vector<int> hash(26, 0);
-        vector<int> phash(26, 0);
-        int window = p.size();
-        int len = s.size();
-        if(len < window)
+        vector<int>res;
+            
+        int n=s.size(),m=p.size();
+        if(n<m)
         {
-            return ans;
+            return res;
         }
-        int left = 0,right = 0;
-        while(right < window)
+        vector<int>hashp(27,0);
+        vector<int>hashs(27,0);
+        
+        
+        for(int i=0;i<p.size();i++)
         {
-            phash[p[right] - 'a'] += 1;
-            hash[s[right] - 'a'] += 1;
-            right++;
+            hashp[p[i]-'a']++;
         }
-        right -=1;
-        while(right < len)
+        
+        int i=0,j=0;
+        
+        while(j<m)
         {
-            if(phash == hash)
+            hashs[s[j]-'a']++;
+            j++;
+        }
+        
+        // for(auto x:hashs)
+        // {
+        //     cout<<x<<' ';
+        // }
+        
+        while(j<s.size())
+        {
+            if(hashp==hashs)
             {
-                ans.push_back(left);
+                res.push_back(i);
             }
-            right+=1;
-            if(right != len)
-            {
-                hash[s[right] - 'a'] += 1;
-            }
-            hash[s[left] - 'a'] -=1 ;
-            left += 1;
+            hashs[s[i]-'a']--;
+            hashs[s[j]-'a']++;
+            i++;
+            j++;
         }
-        return ans;
-    
+        if(hashp==hashs)
+            {
+                res.push_back(i);
+            }
+        return res;   
+        
     }
 };
