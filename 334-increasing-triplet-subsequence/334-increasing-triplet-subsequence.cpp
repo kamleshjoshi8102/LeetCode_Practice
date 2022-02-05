@@ -1,5 +1,14 @@
 class Solution {
 public:
+    // Simple Logic here
+    
+    /*
+        if a is less than nums[i] then assign it to b 
+        if b is less than any number then return true 
+        since it will be our third element i.e, c
+    
+    */
+    
     bool increasingTriplet(vector<int>& nums) {
     int n=nums.size();
     int a=INT_MAX,b=INT_MAX;
