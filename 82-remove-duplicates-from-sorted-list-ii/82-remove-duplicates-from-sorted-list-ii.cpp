@@ -11,37 +11,34 @@
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-     map<int,int>mp;
-        
-        ListNode*w=head;
-        while(w)
+      ListNode*p=head;
+      ListNode*ans=new ListNode(0);  
+        ListNode* ptr=ans;
+        while(p)
         {
-            mp[w->val]++;
-            w=w->next;
+            if(p->next!=NULL and p->next->val==p->val)
+            {
+                ListNode*q=p->next;
+                while(q!=NULL and q->val==p->val)
+                {
+                    q=q->next;
+                }
+                // cout<<q->val<<endl;
+                // q=q->next;
+                p=q;                
+            }
+            else
+            {                
+                cout<<p->val<<endl;
+                
+                ListNode*ne=new ListNode(p->val);
+                ptr->next=ne;
+                ptr=ne;
+                p=p->next;
+            }
+            // p=p->next;
         }
-        ListNode*h=new ListNode();
         
-        ListNode*p=new ListNode();
-        
-        h->next=p;
-        
-    // for(auto x:mp)
-    // {
-    //     cout<<x.first<<' '<<x.second;
-    //     cout<<endl;
-    // }
-        
-        for(auto x:mp)
-        {
-           if(x.second==1)
-           {
-               // cout<<x.first<<endl;
-                ListNode *q=new ListNode(x.first);
-                 p->next=q;
-                    p=q;
-           }
-        }
-        return h->next->next;
-        
+        return ans->next;
     }
 };
