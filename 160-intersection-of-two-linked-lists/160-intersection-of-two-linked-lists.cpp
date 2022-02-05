@@ -8,6 +8,12 @@
  */
 class Solution {
 public:
+    
+    // Nothing to think in this problem 
+    // just take size of first and second list;
+    // increment larger one till it's equal to second one 
+    // and then simply check if equal then return that position 
+    // else return NULL
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         int size1=0,size2=0;
         ListNode*start1=headA;
