@@ -7,13 +7,7 @@ public:
         {
             k=k%n;
         }
-    reverse(nums.begin(),nums.end()-k);
-        
-        for(auto x:nums)
-        {
-            cout<<x<<' ';
-        }cout<<endl;
-        
+    reverse(nums.begin(),nums.end()-k);        
     reverse(nums.end()-k,nums.end());
     reverse(nums.begin(),nums.end());
         
