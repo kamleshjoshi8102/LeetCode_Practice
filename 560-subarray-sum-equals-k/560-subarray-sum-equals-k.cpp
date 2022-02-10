@@ -9,6 +9,10 @@ public:
         
         if(we have any value present before then we can get it's sum)
         
+        3,4,7,2
+        3,7,14,16
+        
+        int 3rd index we will check 14-7 = 7 if 7 present then increase it's cn
     
     */
     int subarraySum(vector<int>& nums, int k) {
