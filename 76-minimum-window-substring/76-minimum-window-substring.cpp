@@ -34,8 +34,6 @@ public:
                 }
                 if(cn==0)
                 {
-                    // cout<<i<<' '<<j<<endl;
-                    
                     while(cn==0)
                     {
                         if(min_window>i-j+1)
@@ -61,7 +59,7 @@ public:
             }
             i++;
         }
-        return  ans;
-        // return "";       
+        mp.clear();
+        return  ans;   
     }
 };
