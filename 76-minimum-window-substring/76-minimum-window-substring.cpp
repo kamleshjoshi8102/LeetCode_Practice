@@ -1,5 +1,13 @@
 class Solution {
 public:
+    
+/*
+    simple sliding window approach is used with unordered_map
+    
+    one counter is made of size map which will check when the length
+    of window is becoming like map length
+        
+*/
     string minWindow(string s, string t) {
         
         if(s.size()<t.size()){return "";}
@@ -35,6 +43,10 @@ public:
                             min_window=i-j+1;
                             ans=s.substr(j,i-j+1);
                         }
+                        
+                        // if that element is occured in mao then it should be 0
+                        // since we have not erased it from map so it should have count
+                        // of that character 
                         if(mp.find(s[j])!=mp.end())
                         {
                             mp[s[j]]++;
@@ -50,9 +62,6 @@ public:
             i++;
         }
         return  ans;
-        
-        
-        
         // return "";       
     }
 };
