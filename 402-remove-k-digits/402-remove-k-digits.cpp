@@ -1,5 +1,12 @@
 class Solution {
 public:
+    
+    // we are simply poping that element where nums[i]<se.top()
+    // like in 1432219
+    
+    // we will pop 4 when i=2 and pop 3 when i = 4
+    // because in 2341 we should remove 3 instead of 2 if k==1
+    
     string removeKdigits(string num, int k) {
         if(num.size()<=k)
         {
