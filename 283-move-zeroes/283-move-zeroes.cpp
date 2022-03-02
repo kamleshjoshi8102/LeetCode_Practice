@@ -9,6 +9,12 @@ public:
                swap(nums[i],nums[j]);
                j++;
            }
+        // for(auto x:nums)
+        // {
+        //     cout<<x<<' ';
+        // }
+        //     cout<<endl;
+            
        }
         
         
