@@ -11,6 +11,9 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        // traversing whole array if any of it's element is p or q
+        // then returning that root if the both collide
+        // or watch striver's vedio
         if(root==NULL || root==p || root==q)
         {
             return root;
