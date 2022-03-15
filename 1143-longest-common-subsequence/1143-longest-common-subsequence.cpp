@@ -25,7 +25,54 @@ public:
                 }
             }
         }
+        // for(int i=0;i<=n;i++)
+        // {
+        //     for(int j=0;j<=m;j++)
+        //     {
+        //         cout<<dp[i][j]<<' ';
+        //     }
+        //     cout<<endl;
+        // }
         
+        /*
+        printing LCS 
+        if equal than i-- and j-- 
+        else
+            if(dp[i-1][j]>dp[i][j-1])
+            {
+            i--;
+            }
+            {
+            j--;
+            }
+                string s="";
+
+                int i=n,j=m;
+
+                while(i>0 and j>0)
+                {
+                    if(x[i-1]==y[j-1])
+                    {
+                        s+=x[i-1];
+                        i--;
+                        j--;
+                    }
+                    else
+                    {
+                        if(dp[i-1][j]>dp[i][j-1])
+                        {
+                            i--;
+                        }
+                        else 
+                        {
+                            j--;
+                        }
+                    }
+                }
+                reverse(s.begin(),s.end());
+                cout<<s<<endl;
+            
+        */
         return dp[n][m];
     }
 };
