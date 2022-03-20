@@ -1,5 +1,10 @@
 class Solution {
 public:
+    
+    // Standared problem of monotonic stack 
+    // used simple logic like find every greater element then any index
+    // every time
+    
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         
         stack<int>st;
