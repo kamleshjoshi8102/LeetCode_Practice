@@ -1,30 +1,38 @@
 class Solution {
 public:
-    int recur(int idx,vector<int>&coins,int amt,
-             vector<vector<int>>&dp)
-    {
-        if(idx==0)
-        {
-            if(amt%coins[0]==0)
-                return amt/coins[0];
-            
-            return 1e9;
-        }
-        if(dp[idx][amt]!=-1)
-            return dp[idx][amt];
-        int notTake=recur(idx-1,coins,amt,dp);
-        int take=1e9;
-        if(coins[idx]<=amt)
-            take=1+recur(idx,coins,amt-coins[idx],dp);
-        return dp[idx][amt]=min(take,notTake);
-    }
     int coinChange(vector<int>& coins, int amount) {
-        
+       // memset(dp,-1,sizeof(dp));
         int n=coins.size();
-       
-        vector<vector<int>>dp(n+1,vector<int>(amount+1,-1));
-         int ans=recur(n-1,coins,amount,dp);
-        return ans==1e9?-1:ans;
-        // return recur(0,coins,amount);
+        int dp[n+1][amount+1];
+        
+        
+        for(int i=0;i<=n;i++)
+        {
+            dp[i][0]=0;
+        }
+        for(int j=0;j<=amount;j++)
+        {
+            dp[0][j]=1e9;
+        }
+            
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=amount;j++)
+            {
+                if(coins[i-1]<=j)
+                {
+                    dp[i][j]= min(dp[i-1][j] , 1+ dp[i][j-coins[i-1]]);
+                }
+                else
+                {
+                    dp[i][j]=dp[i-1][j];
+                }
+            }
+        }
+       if(dp[n][amount]==1e9)
+       {
+           return -1;
+       }
+        return dp[n][amount];
     }
 };
