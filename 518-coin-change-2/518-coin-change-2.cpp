@@ -29,9 +29,6 @@ public:
                 }
             }
         }
-        
-     
-        
         return dp[n][amount];
  
     }
