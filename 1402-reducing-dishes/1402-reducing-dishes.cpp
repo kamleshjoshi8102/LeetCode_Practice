@@ -1,24 +1,28 @@
 class Solution {
 public:
-    int maxSatisFaction(vector<int>&satisfaction, int prevTime, int l, vector<vector<int>> & dp){
-        if(l == satisfaction.size()){
-            return 0;
+    int re(vector<int>&s,int in ,int time , vector<vector<int>> & dp)
+    {
+        if(in==s.size())
+        {return 0;}
+        else if(dp[in][time]!=-1)
+        {
+            return dp[in][time];
         }
-        else if(dp[l][prevTime] != -1){
-            return dp[l][prevTime];
-        }
+        return dp[in][time] = max ( (re(s,in+1,time+1,dp)+(s[in]*(time+1)))
+            ,re(s,in+1,time,dp) 
+            );
         
-       return dp[l][prevTime] =  max(
-         (prevTime + 1)*satisfaction[l] +  maxSatisFaction(satisfaction, prevTime + 1, l+1, dp),
-            
-          maxSatisFaction(satisfaction, prevTime, l+1, dp)
-            
-        );
+        
         
     }
-    int maxSatisfaction(vector<int>& satisfaction) {
-        sort(satisfaction.begin(), satisfaction.end());
-        vector<vector<int>> dp (satisfaction.size() + 1, vector<int> (satisfaction.size() + 1, -1) );
-        return maxSatisFaction(satisfaction, 0, 0, dp);
+    
+    
+    int maxSatisfaction(vector<int>& s) {
+        sort(s.begin(),s.end());
+        
+        vector<vector<int>> dp (s.size() + 1, vector<int> (s.size() + 1, -1) );
+        
+        return re(s,0,0,dp);
+        
     }
 };
