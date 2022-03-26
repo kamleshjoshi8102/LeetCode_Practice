@@ -19,7 +19,7 @@ public:
         {
             return 0;
         }
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         queue<pair<TreeNode*,int>>q;
         
         q.push({root,0});
