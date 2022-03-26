@@ -10,21 +10,21 @@
  * };
  */
 class Solution {
-public:
-    bool isSymmetric(TreeNode* root)
+    private:
+    bool ismirror(TreeNode* root1,TreeNode*root2)
     {
-        if (root == nullptr) return true;
-        return isMirrorTree(root->left, root->right);
-    }
-    
-private:
-    bool isMirrorTree(TreeNode* p, TreeNode* q)
-    {
-        if(p == nullptr || q == nullptr)
+        if(root1==NULL || root2==NULL)
         {
-            return p == q;
+            return root1==root2;
         }
-        
-        return p->val == q->val && isMirrorTree(p->left, q->right) && isMirrorTree(p->right, q->left);
+        return (root1->val==root2->val) && ismirror(root1->left,root2->right) && ismirror(root1->right,root2->left);
+    }
+public:
+    bool isSymmetric(TreeNode* root) {
+        if(root==NULL)
+        {
+            return true;
+        }
+        return (ismirror(root->left,root->right));
     }
 };
