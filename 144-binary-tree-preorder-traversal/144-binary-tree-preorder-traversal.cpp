@@ -11,7 +11,6 @@
  */
 class Solution {
 public:
-    
     vector<int> preorderTraversal(TreeNode* root) {
         vector<int>ans;
         if(root==NULL)
@@ -24,19 +23,16 @@ public:
         
         while(!st.empty())
         {
-            TreeNode*node=st.top();
+            TreeNode*get=st.top();
             st.pop();
-            ans.push_back(node->val);
-            
-            // cout<<node->val<<endl;
-            
-            if(node->right)
+            ans.push_back(get->val);
+            if(get->right)
             {
-                st.push(node->right);
+                st.push(get->right);
             }
-            if(node->left)
+            if(get->left)
             {
-                st.push(node->left);
+                st.push(get->left);
             }
         }
         return ans;
