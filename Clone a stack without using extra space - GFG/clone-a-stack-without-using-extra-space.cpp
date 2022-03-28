@@ -11,7 +11,16 @@ class Solution{
     public:
     void clonestack(stack<int> st, stack<int>& cloned)
     {
-        cloned=st;
+        vector<int>v;
+        while(st.size()>0)
+        {
+            v.push_back(st.top());
+            st.pop();
+        }
+        for(int i=v.size()-1;i>=0;i--)
+        {
+            cloned.push(v[i]);
+        }
     }
 };
 
