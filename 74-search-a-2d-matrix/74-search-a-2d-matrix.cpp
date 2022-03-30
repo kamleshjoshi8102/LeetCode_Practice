@@ -42,10 +42,10 @@ public:
         // cout<<i<<endl;
         
         vector<int>v=matrix[i];
-        for(auto x:v)
-        {
-            cout<<x<<' ';
-        }
+        // for(auto x:v)
+        // {
+        //     cout<<x<<' ';
+        // }
         return bsearch(v,target);
         
     }
