@@ -38,7 +38,7 @@ public:
     
     int deleteAndEarn(vector<int>& nums) {
         
-        int N =10002;
+        int N = 10002;
         
         int dp[N];
         int mp[N];
