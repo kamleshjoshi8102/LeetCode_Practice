@@ -1,49 +1,45 @@
 class Solution {
 public:
-    vector<vector<int>> generate(int numRows) {
-         int n=numRows;
-        vector<vector<int>>finall;
-       vector<int>temp;
+    vector<vector<int>> generate(int n) {
+        vector<vector<int>>ans;
+        if(n==0)
+        {
+            return ans;
+        }
+        ans.push_back({1});
         if(n==1)
-       {
-            temp.push_back(1);
-            finall.push_back(temp);
-           return finall;
-       }
+        {
+            return ans;
+        }
+        ans.push_back({1,1});
         if(n==2)
         {
-            temp.push_back(1);
-            finall.push_back(temp);
-            temp.push_back(1);
-           
-            finall.push_back(temp);
-            return finall;
+            return ans;
         }
-            //for inserting 1, 11
-                temp.push_back(1);
-                finall.push_back(temp);
-                temp.push_back(1);
-                finall.push_back(temp);
-            
-        int k=0;
-        while(k<n-2)
+        
+        
+        for(int i=2;i<n;i++)
         {
-             vector<int>res;
-            for(int i=0;i<temp.size();i++)
+            vector<int>v;
+            v.push_back(1);
+            for(int j=0;j<ans[i-1].size()-1;j++)
             {
-                if(i==0 ){
-                    res.push_back(1);
-                }
-                else if( i==temp.size()-1){
-                    res.push_back(1);
-                    break;
-                } 
-                    res.push_back(temp[i]+temp[i+1]);
+                v.push_back(ans[i-1][j]+ans[i-1][j+1]);
             }
-            temp=res;
-            finall.push_back(temp);
-            k++;
+            
+            v.push_back(1);
+            
+            ans.push_back(v);
         }
-        return finall;
+        
+        return ans;
+        
+        
+        
+        
     }
 };
+
+
+
+
