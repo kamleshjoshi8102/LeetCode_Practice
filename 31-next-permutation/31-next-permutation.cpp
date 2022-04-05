@@ -1,41 +1,39 @@
 class Solution {
 public:
-    void nextPermutation(vector<int>&nums) {
-        vector<int>check=nums;
-        vector<int>check1=nums;
-        sort(check.begin(),check.end(),greater<int>());
-        sort(check1.begin(),check1.end());
+    void nextPermutation(vector<int>& nums) {
         if(nums.size()==1)
         {
             return;
         }
-        if(check1==nums)
+        if(is_sorted(nums.begin(),nums.end()))
         {
-            swap(nums[nums.size()-1],nums[nums.size()-2]);
-            // for(auto x:nums)
-            // {
-            //     cout<<x<<' ';
-            // }
-            // cout<<endl;
+            int n=nums.size();
+            swap(nums[n-1],nums[n-2]);
             return;
         }
-        if(nums==check)
+        vector<int>nu=nums;
+        sort(nu.begin(),nu.end(),greater<int>());
+        
+        if(nu==nums)
         {
-            nums=check1;
+            sort(nums.begin(),nums.end());
             return;
         }
         int n=nums.size();
+        
         for(int i=n-1;i>=0;i--)
         {
-            for(int j=n-1;j>i;j--)
-            {
-                if(nums[j]>nums[i])
-                {
-                    swap(nums[i],nums[j]);
-                    sort(nums.begin()+i+1,nums.end());
-                    return;
-                }
-            }
-        }        
+           for(int j=n-1;j>i;j--)
+           {
+               if(nums[j]>nums[i])
+               {
+                   swap(nums[i],nums[j]);
+                   sort(nums.begin()+i+1,nums.end());
+                   return;
+               }
+           }
+        }
+        
+        
     }
 };
