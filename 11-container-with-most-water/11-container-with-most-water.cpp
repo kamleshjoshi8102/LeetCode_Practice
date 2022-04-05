@@ -6,13 +6,13 @@ public:
             
         int i=0;
         int j=height.size()-1;
+        int n=height.size();
         
         while(i<j)
         {
             int mini=min(height[i],height[j]);
-            int an=mini*(j-i);
-            
-            maxi=max(maxi,an);
+            int b=j-i;
+            maxi=max(maxi,mini*b);
             if(height[j]<height[i])
             {
                 j--;
@@ -21,8 +21,11 @@ public:
             {
                 i++;
             }
+            
+            // cout<<mini<<' '<<b<<endl;
+            
         }
-        return maxi;
+        return maxi;                
         
     }
 };
