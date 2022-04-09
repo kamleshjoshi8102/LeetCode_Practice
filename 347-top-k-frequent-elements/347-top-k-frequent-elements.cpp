@@ -31,6 +31,10 @@ public:
                     res.push_back(v[j]);
                 }
             }
+            if(res.size()==k)
+            {
+                return res;
+            }
         }
         return res;        
     }
