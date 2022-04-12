@@ -39,7 +39,7 @@ public:
             {
                 return start;
             }
-            cout<<start<<" "<<end<<' '<<nu[mid]<<endl;
+            // cout<<start<<" "<<end<<' '<<nu[mid]<<endl;
             
             int next=(nu[(mid+1)%n]);
             int pre=(nu[(mid-1+n)%n]);
