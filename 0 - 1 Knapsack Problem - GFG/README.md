@@ -1,4 +1,6 @@
 # 0 - 1 Knapsack Problem
+
+
 ## Medium 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">You are given weights and values of <strong>N</strong> items, put these items in a knapsack of capacity <strong>W</strong> to get the maximum total value in the knapsack. Note that we have only <strong>one quantity of each item</strong>.<br>
