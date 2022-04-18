@@ -11,25 +11,31 @@
  */
 class Solution {
 public:
-    vector<int>v;
-    void helper(TreeNode*root)
+    int idx=0;
+    int res=0;
+    void helper(TreeNode*root,int k)
     {
         if(root==nullptr)
         {
             return;
         }
-        v.push_back(root->val);
-        helper(root->left);
-        helper(root->right);
+        
+        helper(root->left,k);
+        
+        idx++;
+        
+        if(idx==k)
+        {
+            res=root->val;
+        }
+        
+        helper(root->right,k);
     }
         
     int kthSmallest(TreeNode* root, int k) {
-        v.clear();
-        
-        helper(root);
-        sort(v.begin(),v.end());
-        
-        return v[k-1];
+       
+        helper(root,k);
+        return res;
         
     }
 };
