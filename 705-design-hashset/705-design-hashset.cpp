@@ -1,6 +1,7 @@
 class MyHashSet {
 public:
-    unordered_map<int,int>mp;
+    // unordered_map<int,int>mp;
+    int mp[1000002]={0};
     MyHashSet() {
         
     }
@@ -10,11 +11,18 @@ public:
     }
     
     void remove(int key) {
-        mp.erase(key);
+        // mp.erase(key);
+        mp[key]=0;
     }
     
     bool contains(int key) {
-        return (mp.find(key)!=mp.end());
+        
+        // return (mp.find(key)!=mp.end());
+        if(mp[key]>0)
+        {
+            return true;
+        }
+        return false;
     }
 };
 
