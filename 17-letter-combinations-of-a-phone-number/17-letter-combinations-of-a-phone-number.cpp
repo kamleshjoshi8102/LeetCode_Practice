@@ -26,11 +26,6 @@ public:
             s="";
         }
 
-        
-        for(auto l:mp)
-        {
-            cout<<l.first<<" "<<l.second<<endl;
-        }
         if(digits.size()==1)
         {
             int cv=digits[0]-'0';
