@@ -1,5 +1,13 @@
 class Solution {
 public:
+    
+    /*
+        using priority queue to store recent difference i.e, bricks which we needed to subtract why?
+        
+        since in place of those max bricks we could use ladders if we have any else we break and return counter till now!.
+    
+    */
+    
     int furthestBuilding(vector<int>& height, int bricks, int ladders) {
        priority_queue<int>pq;
         
