@@ -2,7 +2,7 @@ class Solution {
 public:
     int numMatchingSubseq(string s, vector<string>& words) {
         
-        map<char,vector<int>>mp;
+        unordered_map<char,vector<int>>mp;
         
         for(int i=0;i<s.size();i++)
         {
