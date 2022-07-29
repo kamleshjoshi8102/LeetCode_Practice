@@ -1,7 +1,14 @@
 class Solution {
 public:
     
-    vector<int> change(string s)
+    
+    // this helper function will help us to map every char to an index
+    // suppose if char repeats in any string then we will put the same index in vector
+    // I have used vector but string can also do the same job but there conversion to to_String will take a little time
+    
+    
+    
+    vector<int> helper(string s)
     {
         vector<int>v;
         
@@ -9,11 +16,11 @@ public:
         
         for(int i=0;i<s.size();i++)
         {
-            if(mp.find(s[i])!=mp.end())
+            if(mp.find(s[i])!=mp.end()) // if already present in the map we will simply push its previous index into vector
             {
                 v.push_back(mp[s[i]]);
             }
-            else
+            else // if not present then push current index and then map that index to current char value
             {
                 v.push_back(i);
                 mp[s[i]]=i;
@@ -30,16 +37,16 @@ public:
         
         vector<int>check;
         
-        check=change(pattern);
+        check=helper(pattern); // check it's pattern through helper function
         
         // cout<<check<<endl;
         
         
         for(int i=0;i<n;i++)
         {
-            vector<int>temp=change(words[i]);
+            vector<int>temp=helper(words[i]); // check every words pattern through helper and compare
             
-            if(temp==check)
+            if(temp==check) // if those 2 vectors are equal then push else don't
             {
                 v.push_back(words[i]);
             }
