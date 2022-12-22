@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    void dfs(map<int,int>mp, vector<vector<int>>r, int curr, vector<int>&vis)
+    void dfs(unordered_map<int,int>mp, vector<vector<int>>r, int curr, vector<int>&vis)
     {
         
        if(vis[curr]==-1)
@@ -23,7 +23,7 @@ public:
     
     
     bool canVisitAllRooms(vector<vector<int>>& rooms) {
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         
         int n = rooms.size();
         vector<int>vis(n,0);
