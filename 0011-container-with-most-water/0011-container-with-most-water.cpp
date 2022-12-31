@@ -7,7 +7,7 @@ public:
         
         while(i<j)
         {
-            cout<<i<<' '<<j<<endl;
+            // cout<<i<<' '<<j<<endl;
             int mini=min(height[i],height[j]);            
             maxi=max((j-i)*mini,maxi);
             if(height[i]<height[j]){i++;}
