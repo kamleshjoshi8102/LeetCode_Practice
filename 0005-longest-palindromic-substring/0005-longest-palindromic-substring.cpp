@@ -19,13 +19,13 @@ public:
 
             
 
-//             while(l>=0 && s[i]==s[l])
+            while(l>=0 && s[i]==s[l])
 
-//             {
+            {
 
-//                 l--;
+                l--;
 
-//             }
+            }
 
             while(r<n && s[i]==s[r])
 
