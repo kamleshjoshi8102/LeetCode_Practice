@@ -18,7 +18,9 @@ public:
             for(k=0;k<n;k++){
                 
                 string temp=s.substr(i+k*m,m);
+                
                 // cout<<temp<<" "<<i<<endl;
+                
                 if(mp.count(temp)==0){
                     break;
                 }
@@ -31,6 +33,7 @@ public:
                     }
                 }
             }
+            
             if(k==n){
                 ans.push_back(i);
             }
