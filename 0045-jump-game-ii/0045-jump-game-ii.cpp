@@ -1,20 +1,20 @@
 class Solution {
 public:
 
-    int jump(vector<int>& nums) {
+    int jump(vector<int>& n) {
 
-      for(int i = 1; i < nums.size(); i++)
+      for(int i = 1; i < n.size(); i++)
       {
-        nums[i] = max(nums[i] + i, nums[i-1]);
+        n[i] = max(n[i] + i, n[i-1]);
       }
 
-      int ind = 0;
+      int in = 0;
       int ans = 0;
 
-      while(ind < nums.size() - 1)
+      while(in < n.size() - 1)
       {
         ans++;
-        ind = nums[ind];
+        in = n[in];
       }
 
       return ans;
