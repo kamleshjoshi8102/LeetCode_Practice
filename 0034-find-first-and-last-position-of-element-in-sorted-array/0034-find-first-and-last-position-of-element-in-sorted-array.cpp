@@ -53,9 +53,13 @@ public:
     
     vector<int> searchRange(vector<int>& nums, int target) {
         vector<int>v;
-        int fir=bsearch(nums,target,-1);
-        v.push_back(fir);
+        
+        int first=bsearch(nums,target,-1);
+        
+        v.push_back(first);
         v.push_back(bsearch1(nums,target,-1));
+        
+        
         return v;
     }
 };
