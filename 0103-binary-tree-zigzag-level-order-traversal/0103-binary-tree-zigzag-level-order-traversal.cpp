@@ -38,6 +38,7 @@ public:
                 if (node->right != NULL)
                     ne.push(node->right);
         }
+        
        if(f==false)
        {
            reverse(v.begin(),v.end());
