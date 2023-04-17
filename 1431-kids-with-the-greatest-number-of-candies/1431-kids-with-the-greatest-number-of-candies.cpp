@@ -11,7 +11,7 @@ public:
             }
             else
             {
-                // v[i]=false;
+                v[i]=false;
             }
         }
         return v;
