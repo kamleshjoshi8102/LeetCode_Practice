@@ -1,29 +1,48 @@
 class Solution {
 public:
     
-   int bn(vector<int> &arr , int l , int r , int x){
-        while(l <= r){
-            int m = l + (r - l) / 2;
-            if(arr[m] == x)
-                return m;
-            else if(arr[m] > x)
-                r = m - 1;
+    int bs(vector<int>&arr, int l, int h, int x)
+    {
+        while(l<=h)
+        {
+            int mid = l+(h-l)/2;
+            if(arr[mid]==x)
+            {
+                return mid;
+            }
+            else if(arr[mid]>x)
+            {
+                h=mid-1;
+            }
             else
-                l = m + 1;
-        }
-        return -1;
-    }
-    vector<int> twoSum(vector<int>& numbers, int target) {
-         vector<int> ans(2);
-        int n = numbers.size();
-        for(int i = 0 ; i < numbers.size() - 1 ; i++){
-            int x = target - numbers[i];
-            int el = bn(numbers , i + 1 , n - 1 , x);
-            if(el != -1){
-                ans[0] = i + 1;
-                ans[1] = el + 1;
+            {
+                l=mid+1;
             }
         }
-        return ans;
+        return -1;
+        
+    }
+    
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int i=0,j=0;
+        
+        int n = numbers.size();
+        
+        for(int i=0;i<n-1;i++)
+        {
+            
+            int num = target - numbers[i];
+            
+            int getIndex = bs(numbers,i+1,n-1,num);
+            
+            if(getIndex!=i and getIndex!=-1)
+            {
+                return {i+1,getIndex+1};
+            }
+            
+        }
+        
+        return {-1,-1};
+        
     }
 };
