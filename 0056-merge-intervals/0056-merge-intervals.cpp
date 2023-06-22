@@ -28,6 +28,7 @@ public:
                 sc=s;
             }
         }
+        
         ans.push_back({fr,sc});
         
         return ans;
