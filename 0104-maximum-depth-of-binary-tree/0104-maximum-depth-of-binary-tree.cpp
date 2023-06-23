@@ -10,21 +10,19 @@
  * };
  */
 class Solution {
-public:
-    int cnt=0;
+public: 
         
-    int check(TreeNode* root,int &cnt)
+    int check(TreeNode* root)
     {
         if(root==nullptr)
         {
             return 0;
         }
-        return max( check(root->left,cnt),check(root->right,cnt) )+1;
+        return max( check(root->left),check(root->right) )+1;
     }
     
     int maxDepth(TreeNode* root) {
-        int cnt=0;
-        return check(root,cnt);
+        return check(root);
         
     }
 };
