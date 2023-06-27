@@ -14,7 +14,7 @@ public:
                 if(i+needle.size()-1<n)
                 {
                     string get = haystack.substr(i,needle.size());
-                    cout<<get<<" ";
+                    // cout<<get<<" ";
                     if(get==needle){
                         return i;
                     }
