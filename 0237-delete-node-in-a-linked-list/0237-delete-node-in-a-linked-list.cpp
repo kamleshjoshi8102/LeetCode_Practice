@@ -19,7 +19,7 @@ public:
         node->val=new_temp_node->val;
         
         node->next=new_temp_node->next;
-        new_temp_node->next=nullptr;
+        // new_temp_node->next=nullptr;
         
         delete new_temp_node;
         
