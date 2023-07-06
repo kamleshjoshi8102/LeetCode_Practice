@@ -5,10 +5,6 @@ public:
     {
         if(index>=n)
         {
-            // for(auto x:temp)
-            // {
-            //     cout<<x<<" ";
-            // }
             sort(temp.begin(),temp.end());
             ans.insert(temp);
             return;
