@@ -4,8 +4,7 @@ public:
     void helper(int index,int n, vector<int>&nums, vector<int>temp, set<vector<int>>&ans)
     {
         if(index>=n)
-        {
-            sort(temp.begin(),temp.end());
+        { 
             ans.insert(temp);
             return;
         }
@@ -25,6 +24,7 @@ public:
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         set<vector<int>>ans;
         vector<vector<int>>res;
+        sort(nums.begin(),nums.end());
         
         helper(0,nums.size(),nums,{},ans);
         
