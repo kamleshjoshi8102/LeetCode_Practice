@@ -11,18 +11,30 @@
 class Solution {
 public:
     int pairSum(ListNode* head) {
-        ListNode* temp=head;
-        stack<int>s;
-        while(temp){
-            s.push(temp->val);
+        
+        stack<int>st;
+        ListNode *temp=head;
+        
+        while(temp)
+        {
+            st.push(temp->val);
             temp=temp->next;
         }
-       int mx=0;
-       while(s.size()){
-           mx=max(mx,s.top()+head->val);
-           head=head->next;
-           s.pop();
-       }
-       return mx;
+        
+        temp=head;
+        int cnt = st.size();
+        int maxi = INT_MIN;
+        
+        while(temp and st.size()>cnt/2)
+        {
+            maxi=max(maxi,st.top()+temp->val);  
+            st.pop();
+            temp=temp->next;
+        }
+        
+        
+        return maxi;
+        
+        
     }
 };
