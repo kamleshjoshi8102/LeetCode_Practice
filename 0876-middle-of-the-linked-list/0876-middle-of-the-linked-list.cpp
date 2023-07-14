@@ -11,22 +11,23 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        // using tortoise and hare method here
         
-        ListNode * slow = head;
-        ListNode * fast = head;
-        
-        while(fast)
+        if(head==nullptr or head->next==nullptr)
         {
-            
-            fast=fast->next;
-            if(fast)
-            {
-                fast=fast->next;
-                slow=slow->next;
-            }
+            return head;
         }
+        ListNode*slow=head,*fast=head->next;
+        
+        
+        while(fast!=nullptr)
+        {
+            fast=fast->next;
+            if(fast){fast=fast->next;}
+            slow=slow->next;
+        }
+        
         return slow;
+        
         
     }
 };
