@@ -16,10 +16,10 @@ public:
         {
             return head;
         }
-        ListNode*slow=head,*fast=head->next;
+        ListNode*slow=head,*fast=head;
         
         
-        while(fast!=nullptr)
+        while(fast!=nullptr and fast->next!=nullptr)
         {
             fast=fast->next;
             if(fast){fast=fast->next;}
