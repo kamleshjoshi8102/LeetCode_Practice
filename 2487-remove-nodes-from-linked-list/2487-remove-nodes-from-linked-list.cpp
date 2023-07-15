@@ -73,8 +73,7 @@ public:
             }
             
         }
-        
-        cout<<head->val<<endl;
+         
         
         head=reverse(head);
         
